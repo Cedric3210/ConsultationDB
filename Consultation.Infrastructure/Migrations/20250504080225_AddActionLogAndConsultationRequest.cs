@@ -28,24 +28,6 @@ namespace Consultation.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Bulletin",
-                columns: table => new
-                {
-                    BulletinID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DatePublished = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Priority = table.Column<int>(type: "int", nullable: false),
-                    Notify = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Bulletin", x => x.BulletinID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ConsultationRequest",
                 columns: table => new
                 {
@@ -72,9 +54,6 @@ namespace Consultation.Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "ActionLog");
-
-            migrationBuilder.DropTable(
-                name: "Bulletin");
 
             migrationBuilder.DropTable(
                 name: "ConsultationRequest");
