@@ -27,6 +27,10 @@ namespace Consultation.Infrastructure.Data
                 "Connection Timeout=30;");
             base.OnConfiguring(optionsBuilder);
         }
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
+        {
+        }
 
         public DbSet<ActionLog> ActionLog { get; set; }
         public DbSet<Bulletin> Bulletin { get; set; }
