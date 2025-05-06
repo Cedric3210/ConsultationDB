@@ -9,8 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Presenters\" />
-    <Folder Include="Views\" />
+    <Compile Remove="Presenters\**" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="Presenters\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Presenters\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="View\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
