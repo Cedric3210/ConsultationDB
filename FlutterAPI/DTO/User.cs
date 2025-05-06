@@ -11,7 +11,7 @@ namespace FlutterAPI.DTO
 
         //public Admin admin { get; set; }
 
-        public string UserPassword22 { get; set; }
+        public string UserPassword { get; set; }
 
         public string UserEmail { get; set; }
 

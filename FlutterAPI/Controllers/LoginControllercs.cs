@@ -1,4 +1,5 @@
-﻿using Consultation.Infrastructure.Data;
+﻿using Consultation.Domain;
+using Consultation.Infrastructure.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,15 @@ namespace FlutterAPI.Controllers
 
             if (request == null || user.UserPassword != request.Password)
                 return Unauthorized("Wrong Email and Password.");
+
+            _context.ActionLog.Add(new ActionLog
+            {
+                ActionLogID = 0,
+                Description = "Login",
+                Date = DateTime.Now,
+                Time = TimeOnly.FromDateTime(DateTime.Now)
+            });
+            _context.SaveChanges();
 
             return Ok(new
                     {

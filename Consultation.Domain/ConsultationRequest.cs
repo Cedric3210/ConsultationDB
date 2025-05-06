@@ -19,18 +19,20 @@ namespace Consultation.Domain
 
         public DateTime DateRequested { get; set; }
 
-        public int RequestedByID { get; set; }
-
         public string Status { get; set; }
 
         public string? DisapprovedReason { get; set; }
 
+        //This is suppose to be a Reference Type 
+        //Code: Public Notification Notification { get; set; }
         public string Notify { get; set; } //???
 
         [ForeignKey(nameof(StudentID))]
-        public int StudentID { get; set; }
+        public int StudentID { get; set; } 
+        public Student Student { get; set; }
 
         [ForeignKey(nameof(FacultyID))]
-        public int FacultyID { get; set; }
+        public int FacultyID { get; set; } 
+        public Faculty Faculty { get; set; }
     }
 }

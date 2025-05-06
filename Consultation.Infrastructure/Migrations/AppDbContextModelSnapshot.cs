@@ -45,7 +45,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("ActionLogID");
 
-                    b.ToTable("ActionLog");
+                    b.ToTable("ActionLog", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Bulletin", b =>
@@ -80,7 +80,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("BulletinID");
 
-                    b.ToTable("Bulletin");
+                    b.ToTable("Bulletin", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.ConsultationRequest", b =>
@@ -123,7 +123,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("ConsultationID");
 
-                    b.ToTable("ConsultationRequest");
+                    b.ToTable("ConsultationRequest", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Courses", b =>
@@ -151,7 +151,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("CourseID");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Courses", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Department", b =>
@@ -172,7 +172,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("DeparmentID");
 
-                    b.ToTable("Department");
+                    b.ToTable("Department", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.EnrolledCourse", b =>
@@ -189,7 +189,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("EnrolledCourseID");
 
-                    b.ToTable("EnrolledCourse");
+                    b.ToTable("EnrolledCourse", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Faculty", b =>
@@ -212,7 +212,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("FacultyID");
 
-                    b.ToTable("Faculty");
+                    b.ToTable("Faculty", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Program", b =>
@@ -236,7 +236,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("ProgramID");
 
-                    b.ToTable("Program");
+                    b.ToTable("Program", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.SchoolYear", b =>
@@ -261,7 +261,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("SchoolYearID");
 
-                    b.ToTable("SchoolYear");
+                    b.ToTable("SchoolYear", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.Student", b =>
@@ -288,7 +288,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("StudentID");
 
-                    b.ToTable("Students");
+                    b.ToTable("Students", (string)null);
                 });
 
             modelBuilder.Entity("Consultation.Domain.User", b =>
@@ -312,7 +312,7 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("UserID");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 #pragma warning restore 612, 618
         }
