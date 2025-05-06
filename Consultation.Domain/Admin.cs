@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Consultation.Domain
 {
-    public class Isid
+    public class Admin
     {
         [Key]
-        public int IsidId { get; set; }
-        public string IsidName { get; set; }
+        public string UserName {  get; set; }
+        public string Password { get; set; }    
     }
 }
