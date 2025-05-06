@@ -14,7 +14,7 @@ namespace Consultation.Domain
 
         public Faculty faculty { get; set; }
 
-        //public Admin admin { get; set; }
+        public Admin admin { get; set; }
 
         public string UserPassword { get; set; }
 
