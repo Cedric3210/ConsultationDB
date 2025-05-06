@@ -15,7 +15,7 @@ namespace FlutterAPI.Controllers
         {
             _context = context;
         }
-        
+
         //This is testing for httpget
         [HttpGet]
         public IActionResult GetUser(int id)

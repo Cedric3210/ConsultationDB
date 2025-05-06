@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Consultation.Infrastructure\Consultation.Infrastructure.csproj" />
+    <ProjectReference Include="..\Enum\Enum.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlutterAPI", "FlutterAPI\Fl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAPI", "MyAPI\MyAPI.csproj", "{476418E4-E622-487A-95B0-85E897798B6F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enum", "Enum", "{B714E679-DA0A-41C4-8587-FF0093F0329C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "Enum\Enum.csproj", "{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{476418E4-E622-487A-95B0-85E897798B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{476418E4-E622-487A-95B0-85E897798B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{476418E4-E622-487A-95B0-85E897798B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9} = {B714E679-DA0A-41C4-8587-FF0093F0329C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D43CDB5-0861-4E5D-AB8D-59DCA4B29FFA}
