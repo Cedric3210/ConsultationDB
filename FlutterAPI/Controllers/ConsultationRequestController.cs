@@ -1,6 +1,5 @@
 ﻿using Consultation.Domain;
 using Consultation.Infrastructure.Data;
-using FlutterAPI.DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 

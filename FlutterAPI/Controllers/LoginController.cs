@@ -8,11 +8,11 @@ namespace FlutterAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class LoginControllercs : ControllerBase
+    public class LoginController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public LoginControllercs(AppDbContext context)
+        public LoginController(AppDbContext context)
         {
             _context = context;
         }

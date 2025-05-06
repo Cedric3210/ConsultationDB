@@ -1,18 +1,16 @@
-﻿using Consultation.Domain.Enum;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Consultation.Domain
 {
-    public class UserApp
+    public class Users
     {
         [Key]
-        public string UserID { get; set; }
+        public int UserID { get; set; }
 
         public string UserPassword { get; set; }
 
@@ -23,6 +21,5 @@ namespace Consultation.Domain
         //public Faculty Faculty { get; set; }
 
         //public UserType UserType { get; set; }
-
     }
 }

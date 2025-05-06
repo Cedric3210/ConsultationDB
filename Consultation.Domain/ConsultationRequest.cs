@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Consultation.Domain.Enum;
 
 namespace Consultation.Domain
 {
@@ -19,9 +20,11 @@ namespace Consultation.Domain
 
         public DateTime DateRequested { get; set; }
 
-        public string Status { get; set; }
+        public Status Status { get; set; }
 
         public string? DisapprovedReason { get; set; }
+
+        public string SubjectCode { get; set; } 
 
         //This is suppose to be a Reference Type 
         //Code: Public Notification Notification { get; set; }

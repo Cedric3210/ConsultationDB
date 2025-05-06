@@ -12,19 +12,7 @@ namespace FlutterAPI.Controllers
             _context = context;
         }
 
-        [HttpGet("Consulatation/{UpdateStatus}")]
-        public IActionResult GetDashBoardData()
-        {
-           // var count = await _context.Consultations
-           //.Where(c => c.StudentId == studentId && c.Status == "Pending")
-           //.CountAsync();
 
-           // return Ok(new
-           // {
-           //     StudentId = studentId,
-           //     PendingConsultations = count
-           // });
-        }
 
     }
 }
