@@ -10,7 +10,7 @@ namespace Consultation.Domain
     public class Isid
     {
         [Key]
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public int IsidId { get; set; }
+        public string IsidName { get; set; }
     }
 }
