@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Consultation.Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,17 +10,16 @@ namespace Consultation.Domain
 {
     public class User
     {
-        public string UserID { get; set; }
+        public Student student {  get; set; }
+
+        public Faculty faculty { get; set; }
+
+        //public Admin admin { get; set; }
 
         public string UserPassword { get; set; }
 
         public string UserEmail { get; set; }
 
-        [ForeignKey(nameof(FacultyID))]
-        public string? FacultyID { get; set; }
-
-        [ForeignKey(nameof(StudentID))]
-        public string? StudentID { get; set; }
-
+        public UserType UserType { get; set; }
     }
 }
