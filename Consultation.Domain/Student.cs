@@ -13,7 +13,8 @@ namespace Consultation.Domain
         [Key]
         public int StudentID { get; set; }
         public string StudentName { get; set; }
-        public string Email { get; set; }
+        
+        //public string Email { get; set; }
 
         [ForeignKey(nameof(SchoolYearID))]
         public int SchoolYearID { get; set; }
