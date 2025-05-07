@@ -26,7 +26,6 @@ namespace FlutterAPI.Controllers
 
             _context.ActionLog.Add(new ActionLog
             {
-                ActionLogID = 0,
                 Description = "Consultation Request",
                 Date = DateTime.Now,
                 Time = TimeOnly.FromDateTime(DateTime.Now)

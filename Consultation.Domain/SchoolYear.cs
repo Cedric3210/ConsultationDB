@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -14,6 +15,7 @@ namespace Consultation.Domain
         public string SchoolYearID { get; set; }
 
         public string Term { get; set; }
+        public string Semester { get; set; }
 
         public string Year1 { get; set; }
 
@@ -21,5 +23,6 @@ namespace Consultation.Domain
 
         [ForeignKey(nameof(EnrolledCourseID))]
         public int  EnrolledCourseID { get; set; }
+        public SchoolYearStatus SchoolYearStatus { get; set; } 
     }
 }
