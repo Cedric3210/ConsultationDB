@@ -20,6 +20,7 @@ namespace Consultation.Domain
 
         [ForeignKey(nameof(ProgramID))]
         public int ProgramID { get; set; }
+        
 
     }
 }

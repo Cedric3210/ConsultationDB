@@ -13,5 +13,7 @@ namespace Consultation.Domain
 
         [ForeignKey(nameof(DepartmentID))]
         public int  DepartmentID { get; set; }
+        public virtual Department Department { get; set; }
+
     }
 }

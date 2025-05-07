@@ -32,6 +32,10 @@ namespace Consultation.Infrastructure.Data
         {
         }
 
+        public AppDbContext()
+        {
+        }
+
         public DbSet<ActionLog> ActionLog { get; set; }
         public DbSet<Admin> Admin { get; set; }
         public DbSet<Bulletin> Bulletin { get; set; }

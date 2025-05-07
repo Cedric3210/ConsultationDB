@@ -14,10 +14,13 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAPI", "MyAPI\MyAPI.csproj", "{476418E4-E622-487A-95B0-85E897798B6F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consultation.App2", "Consultation.App2\Consultation.App2.csproj", "{B6D6ED0C-D165-449C-9763-A826C15B0FF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{84C2E55A-F807-4434-B3CA-4948797905F2} = {84C2E55A-F807-4434-B3CA-4948797905F2}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enum", "Enum", "{B714E679-DA0A-41C4-8587-FF0093F0329C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum", "Enum\Enum.csproj", "{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enum", "Enum\Enum.csproj", "{6C99B23B-8BCF-4F4F-97D0-DD147F959DD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
