@@ -51,7 +51,6 @@
             textboxStudentID.Name = "textboxStudentID";
             textboxStudentID.Size = new Size(236, 27);
             textboxStudentID.TabIndex = 1;
-            textboxStudentID.Text = "1";
             textboxStudentID.TextChanged += textboxStudentID_TextChanged;
             // 
             // buttonShowStudentData
@@ -94,7 +93,6 @@
             Controls.Add(textboxStudentID);
             Controls.Add(dataGridViewStudents);
             Name = "ReadStudents";
-            Text = "ReadStudents";
             Load += ReadStudents_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).EndInit();
             ResumeLayout(false);
