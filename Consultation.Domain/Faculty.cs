@@ -11,8 +11,8 @@ namespace Consultation.Domain
     public class Faculty
     {
         [Key]
-        public int FacultyID { get; set; }
-
+        public string FacultyID { get; set; }
+        public int FacultyNumber { get; set; }
         public string FacultyName { get; set; }
 
         [ForeignKey(nameof(EnrolledCourseID))]

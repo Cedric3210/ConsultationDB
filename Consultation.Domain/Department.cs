@@ -10,7 +10,7 @@ namespace Consultation.Domain
     public class Department
     {
         [Key]
-        public int DeparmentID { get; set; }
+        public int DepartmentID { get; set; }
 
         public string DepartmentName { get; set; }
 

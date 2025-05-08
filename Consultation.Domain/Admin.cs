@@ -14,8 +14,5 @@ namespace Consultation.Domain
         public int AdminID {  get; set; }
         
         public string AdminUsername { get; set; }
-
-        [ForeignKey(nameof(UserID))]
-        public int UserID { get; set; }
     }
 }

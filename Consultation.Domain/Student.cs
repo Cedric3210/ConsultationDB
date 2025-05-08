@@ -11,7 +11,8 @@ namespace Consultation.Domain
     public class Student
     {
         [Key]
-        public int StudentID { get; set; }
+        public string StudentID { get; set; }
+        public int StudentNumber { get; set; }
         public string StudentName { get; set; }
         public string Email { get; set; }
 
