@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -78,7 +77,7 @@ namespace Consultation.App2.View
     // prototype for the button shown student data model (buttons)
     public class StudentDto
     {
-        public int StudentID { get; set; }
+        public string StudentID { get; set; }
         public string StudentName { get; set; }
         public string Email { get; set; }
     }

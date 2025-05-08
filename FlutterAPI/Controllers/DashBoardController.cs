@@ -20,7 +20,7 @@ namespace FlutterAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowForStudents([FromBody] int studentId)
+        public IActionResult ShowForStudents([FromBody] string studentId)
         {
             var student = _context.Students
                 .Include(c => c.SchoolYears)

@@ -12,10 +12,8 @@ namespace Consultation.Domain
     public class SchoolYear
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string SchoolYearID { get; set; }
-
-        public string Term { get; set; }
-        public string Semester { get; set; }
 
         public string Year1 { get; set; }
 
@@ -24,8 +22,15 @@ namespace Consultation.Domain
         [ForeignKey(nameof(EnrolledCourseID))]
         public int  EnrolledCourseID { get; set; }
 
+        public virtual EnrolledCourse EnrolledCourse { get; set; }
+
         [ForeignKey(nameof(StudentID))]
         public string StudentID { get; set; }
+
+        public virtual Student Student { get; set; }
         public SchoolYearStatus SchoolYearStatus { get; set; } 
+
+        public AcademicYear AcademicYear { get; set; }
+
     }
 }

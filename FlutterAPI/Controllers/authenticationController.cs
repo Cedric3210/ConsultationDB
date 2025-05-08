@@ -7,102 +7,88 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Consultation.Domain;
 using Consultation.Infrastructure.Data;
+using FlutterAPI.ViewModel;
 
 namespace FlutterAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    public class authenticationController : ControllerBase
+    public class AuthenticationController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public authenticationController(AppDbContext context)
+        public AuthenticationController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/authentication
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
-        {
-            return await _context.Users.ToListAsync();
-        }
-
-        // GET: api/authentication/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Users>> GetUsers(int id)
-        {
-            var users = await _context.Users.FindAsync(id);
-
-            if (users == null)
-            {
-                return NotFound();
-            }
-
-            return users;
-        }
-
-        // PUT: api/authentication/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsers(int id, Users users)
-        {
-            if (id != users.UserID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(users).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsersExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/authentication
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        //Register Controller
         [HttpPost]
-        public async Task<ActionResult<Users>> PostUsers(Users users)
+        public async Task<IActionResult> RegisterPerson([FromBody] UserModel Users)
         {
-            _context.Users.Add(users);
-            await _context.SaveChangesAsync();
+            var existingUser = await _context.Users
+                .FirstOrDefaultAsync(u => u.UserEmail == Users.UserEmail);
 
-            return CreatedAtAction("GetUsers", new { id = users.UserID }, users);
-        }
-
-        // DELETE: api/authentication/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUsers(int id)
-        {
-            var users = await _context.Users.FindAsync(id);
-            if (users == null)
+            if (existingUser != null)
             {
-                return NotFound();
+                return BadRequest("Account has been Register");
             }
 
-            _context.Users.Remove(users);
+            var student = new Users
+            {
+                UserPassword = Users.UserPassword,
+                UserEmail = Users.UserEmail,
+                UserID = Users.UserID,
+            };
+
+            _context.ActionLog.Add(new ActionLog
+            {
+                ActionLogID = 0,
+                Description = "Account has been Added",
+                Date = DateTime.Now,
+                Time = TimeOnly.FromDateTime(DateTime.Now)
+            });
+
+            _context.Users.Add(student);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Registration successful");
         }
 
-        private bool UsersExists(int id)
+        //Log-in Controller
+        [HttpPost]
+        public IActionResult Login([FromBody] UserModel Users)
         {
-            return _context.Users.Any(e => e.UserID == id);
+
+            if (Users == null || string.IsNullOrEmpty(Users.UserEmail) || string.IsNullOrEmpty(Users.UserPassword))
+                return BadRequest("Username and password are required.");
+
+            var user = _context.Users.FirstOrDefault(u => u.UserEmail == Users.UserEmail);
+
+            if (!IsValidUser(Users.UserEmail, Users.UserPassword))
+                return Unauthorized("Wrong Email and Password.");
+
+            _context.ActionLog.Add(new ActionLog
+            {
+                ActionLogID = 0,
+                Description = "Login",
+                Date = DateTime.Now,
+                Time = TimeOnly.FromDateTime(DateTime.Now)
+            });
+            _context.SaveChanges();
+
+            return Ok(new
+            {
+                message = "Login successful",
+                username = user.UserEmail
+            });
+        }
+
+        //This query is used to check if the user is valid
+        private bool IsValidUser(string username, string password)
+        {
+            var userValid = _context.Users.FirstOrDefault(u => u.UserEmail == username);
+            return userValid != null && userValid.UserPassword == password;
         }
     }
 }

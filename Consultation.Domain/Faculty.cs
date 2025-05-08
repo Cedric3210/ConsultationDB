@@ -17,8 +17,14 @@ namespace Consultation.Domain
 
         [ForeignKey(nameof(EnrolledCourseID))]
         public int EnrolledCourseID { get; set; }
+        public virtual EnrolledCourse EnrolledCourse { get; set; }
 
         [ForeignKey(nameof(FacultyScheduleID))]
         public int FacultyScheduleID { get; set; }
+        public virtual FacultySchedule FacultySchedule { get; set; }
+
+        //Added this field kay and faculty diba naa list of pila ka request na abot sa ilaha
+        //Pero dili pako siure If needed jud siya
+        //public List<ConsultationRequest> ConsultationRequests { get; set; }
     }
 }

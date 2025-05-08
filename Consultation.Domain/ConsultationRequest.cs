@@ -22,20 +22,22 @@ namespace Consultation.Domain
 
         public Status Status { get; set; }
 
+        public TimeOnly StartedTime { get; set; }
+
+        public TimeOnly EndedTime { get; set; }
+
         public string? DisapprovedReason { get; set; }
 
-        public string SubjectCode { get; set; } 
+        public string SubjectCode { get; set; }
 
-        //This is suppose to be a Reference Type 
-        //Code: Public Notification Notification { get; set; }
-        public string Notify { get; set; } //???
+        public Notification Notification { get; set; }
 
         [ForeignKey(nameof(StudentID))]
-        public int StudentID { get; set; } 
+        public string StudentID { get; set; } 
         public Student Student { get; set; }
 
         [ForeignKey(nameof(FacultyID))]
-        public int FacultyID { get; set; } 
+        public string FacultyID { get; set; } 
         public Faculty Faculty { get; set; }
     }
 }

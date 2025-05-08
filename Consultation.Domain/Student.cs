@@ -11,6 +11,7 @@ namespace Consultation.Domain
     public class Student
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string StudentID { get; set; }
         public int StudentNumber { get; set; }
         public string StudentName { get; set; }
