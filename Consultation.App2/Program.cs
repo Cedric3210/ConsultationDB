@@ -1,5 +1,6 @@
 using Consultation.App2;
-using LoginForm;
+using Consultation.App2.View;
+
 namespace Consultation.App2
 {
     internal static class Program
@@ -13,8 +14,8 @@ namespace Consultation.App2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            LogIn login = new LogIn();
-            Application.Run(login);
+            ReadStudents readStudents = new ReadStudents();
+            Application.Run(readStudents);
         }
     }
 }

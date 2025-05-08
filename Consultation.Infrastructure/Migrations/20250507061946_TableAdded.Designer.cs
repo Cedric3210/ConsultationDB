@@ -4,6 +4,7 @@ using Consultation.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Consultation.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250507061946_TableAdded")]
+    partial class TableAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -260,8 +263,6 @@ namespace Consultation.Infrastructure.Migrations
 
                     b.HasKey("ProgramID");
 
-                    b.HasIndex("DepartmentID");
-
                     b.ToTable("Program");
                 });
 
@@ -355,17 +356,6 @@ namespace Consultation.Infrastructure.Migrations
                     b.Navigation("Faculty");
 
                     b.Navigation("Student");
-                });
-
-            modelBuilder.Entity("Consultation.Domain.Program", b =>
-                {
-                    b.HasOne("Consultation.Domain.Department", "Department")
-                        .WithMany()
-                        .HasForeignKey("DepartmentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Department");
                 });
 #pragma warning restore 612, 618
         }
