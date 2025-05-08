@@ -15,12 +15,15 @@ namespace Consultation.Domain
         public string StudentName { get; set; }
         public string Email { get; set; }
 
-        [ForeignKey(nameof(SchoolYearID))]
-        public int SchoolYearID { get; set; }
+        //[ForeignKey(nameof(SchoolYearID))]
+        //public int SchoolYearID { get; set; }
+        public List<SchoolYear> SchoolYears { get; set; }
 
         [ForeignKey(nameof(ProgramID))]
         public int ProgramID { get; set; }
-        
+        public virtual Program Program { get; set; }
+
+        public List<ConsultationRequest> ConsultationRequests { get; set; }
 
     }
 }
