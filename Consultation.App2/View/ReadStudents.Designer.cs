@@ -32,6 +32,7 @@
             textboxStudentID = new TextBox();
             buttonShowStudentData = new Button();
             label1 = new Label();
+            buttonShowStudentCourse = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStudents).BeginInit();
             SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             textboxStudentID.Name = "textboxStudentID";
             textboxStudentID.Size = new Size(236, 27);
             textboxStudentID.TabIndex = 1;
+            textboxStudentID.Text = "1";
             textboxStudentID.TextChanged += textboxStudentID_TextChanged;
             // 
             // buttonShowStudentData
@@ -71,11 +73,22 @@
             label1.TabIndex = 3;
             label1.Text = "Search";
             // 
+            // buttonShowStudentCourse
+            // 
+            buttonShowStudentCourse.Location = new Point(34, 289);
+            buttonShowStudentCourse.Name = "buttonShowStudentCourse";
+            buttonShowStudentCourse.Size = new Size(218, 36);
+            buttonShowStudentCourse.TabIndex = 4;
+            buttonShowStudentCourse.Text = "Show Enrolled Course";
+            buttonShowStudentCourse.UseVisualStyleBackColor = true;
+            buttonShowStudentCourse.Click += buttonShowStudentCourse_Click;
+            // 
             // ReadStudents
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonShowStudentCourse);
             Controls.Add(label1);
             Controls.Add(buttonShowStudentData);
             Controls.Add(textboxStudentID);
@@ -94,5 +107,6 @@
         private TextBox textboxStudentID;
         private Button buttonShowStudentData;
         private Label label1;
+        private Button buttonShowStudentCourse;
     }
 }
